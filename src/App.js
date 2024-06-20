@@ -1,16 +1,23 @@
 import Navbar from './Navbar';
 import Home from './Home';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // JSX Template
 function App() {
 
   return (
-    <div className="App">
-      <Navbar></Navbar>
-      <div className="content">
-        <Home></Home>
+    <Router>
+      <div className="App">
+        <Navbar></Navbar>
+        <div className="content">
+          <Switch>
+            <Route path="/">
+              <Home></Home>
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
